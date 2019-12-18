@@ -9,12 +9,12 @@ const createStore = () => {
     getters: {
     },
     mutations: {
-      SET_USER (state, payload) {
+      SET_USER(state, payload) {
         state.user = payload
       }
     },
     actions: {
-      signInWithGoogle ({commit}) {
+      signInWithGoogle({ commit }) {
         var googleAuth = auth.signInWithRedirect(GoogleProvider)
         return googleAuth
       }
