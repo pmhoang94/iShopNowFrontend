@@ -29,8 +29,7 @@ module.exports = {
    */
   plugins: [
     '@/plugins/element-ui',
-    '@/plugins/fireauth.js',
-    '@/plugins/router-auth.js'
+    '@/plugins/fireauth'
   ],
   router: {},
   /*

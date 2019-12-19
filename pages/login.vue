@@ -1,25 +1,20 @@
 <template>
   <div class="container">
     <h1>login</h1>
-    <input type="button" value="Login with Google" @click="loginGoogle" />
+    <input type="button" value="Login with Google" @click="loginGoogle()" />
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-import { auth } from '@/services/fireinit.js'
+import { mapActions, mapState, mapGetters } from 'vuex'
 
 export default {
+  computed: {},
   methods: {
-    loginGoogle() {
-      this.$store
-        .dispatch('signInWithGoogle')
-        .then(() => {
-          console.log('inside then statement on login')
-        })
-        .catch(e => {
-          console.log(e.message)
-        })
+    loginGoogle: async function() {
+      let _this = this
+      debugger
+      await _this.$store.dispatch('auth/signInWithGoogle')
     }
   }
 }
