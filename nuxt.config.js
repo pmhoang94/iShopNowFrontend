@@ -1,5 +1,5 @@
 module.exports = {
-  mode: 'universal',
+  mode: 'spa',
   /*
    ** Headers of the page
    */
@@ -23,13 +23,19 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['element-ui/lib/theme-chalk/index.css'],
+  css: [
+    'element-ui/lib/theme-chalk/index.css',
+    'bootstrap/dist/css/bootstrap.css',
+    'bootstrap-vue/dist/bootstrap-vue.css'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
   plugins: [
+    '@/plugins/axios',
     '@/plugins/element-ui',
-    '@/plugins/fireauth'
+    '@/plugins/fireauth',
+    '@/plugins/bootstrap-vue'
   ],
   router: {},
   /*

@@ -1,7 +1,6 @@
 <template>
   <div class="container">
-    <h1>index</h1>
-    <nuxt-link to="/test">123</nuxt-link>
+    <h1>test</h1>
   </div>
 </template>
 

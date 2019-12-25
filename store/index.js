@@ -1,24 +1,14 @@
 import Vuex from 'vuex'
-import firebase, {auth, GoogleProvider} from '@/services/fireinit.js'
+import authModule from './modules/auth'
 
 const createStore = () => {
   return new Vuex.Store({
-    state: {
-      user: null
+    state: {},
+    modules: {
+      auth: authModule
     },
-    getters: {
-    },
-    mutations: {
-      SET_USER(state, payload) {
-        state.user = payload
-      }
-    },
-    actions: {
-      signInWithGoogle({ commit }) {
-        var googleAuth = auth.signInWithRedirect(GoogleProvider)
-        return googleAuth
-      }
-    }
+    actions: {},
+    mutations: {}
   })
 }
 
