@@ -8,7 +8,6 @@ export default context => {
     const { store } = context
     fireAuth.onAuthStateChanged(async user => {
       if (user) {
-        debugger
         var token = await user.getIdToken(true)
         var userInfo = jwtDecode(token)
         userInfo.token = token

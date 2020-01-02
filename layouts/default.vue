@@ -1,55 +1,59 @@
 <template>
   <div>
-    <nuxt />
+    <div :class="hideMenu ? 'sidebar-xs sidebar-mobile-main' : ''">
+      <!-- Main navbar -->
+      <nav-bar />
+      <!-- /main navbar -->
+      <!-- Page container -->
+      <div class="page-container" :style="`min-height:${windowHeight}px;`">
+
+        <!-- Page content -->
+        <div :class="`page-content ${hideMenu ? 'sidebar-main' : ''}`">
+          <!-- Main sidebar -->
+          <side-bar />
+          <!-- /main sidebar -->
+          <!-- Main content -->
+          <nuxt />
+          <!-- /main content -->
+        </div>
+        <!-- /page content -->
+      </div>
+      <!-- /page container -->
+    </div>
   </div>
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<script>
+import { mapState, mapGetters } from 'vuex'
+import NavBar from '~/components/NavBar.vue'
+import SideBar from '~/components/SideBar.vue'
+export default {
+  components: {
+    NavBar,
+    SideBar
+  },
+  computed: {
+    ...mapGetters({
+    }),
+    ...mapState({
+      hideMenu: state => state.hideMenu,
+    })
+  },
+  data() {
+    return {
+       windowHeight: 800,
+    }
+  },
+  beforeMount() {
+  },
+  async created() {
+  },
+  mounted(){
+  },
+  watch:{
+  },
+  methods: {
+  }
 }
+</script>
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
-</style>

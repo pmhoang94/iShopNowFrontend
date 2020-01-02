@@ -4,17 +4,17 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'iShopNow',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: 'iShopNow'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/logo.png' }]
   },
   /*
    ** Customize the progress-bar color
@@ -24,9 +24,14 @@ module.exports = {
    ** Global CSS
    */
   css: [
+    '~/assets/css/icons/icomoon/styles.css',
+    '~/assets/css/bootstrap.css',
+    '~/assets/css/core.css',
+    '~/assets/css/components.css',
+    '~/assets/css/colors.css',
+    '~/assets/css/custom.css',
     'element-ui/lib/theme-chalk/index.css',
-    'bootstrap/dist/css/bootstrap.css',
-    'bootstrap-vue/dist/bootstrap-vue.css'
+    '~/assets/css/style.css'
   ],
   /*
    ** Plugins to load before mounting the App
@@ -35,7 +40,8 @@ module.exports = {
     '@/plugins/axios',
     '@/plugins/element-ui',
     '@/plugins/fireauth',
-    '@/plugins/bootstrap-vue'
+    '@/plugins/bootstrap-vue',
+    '@/plugins/i18n'
   ],
   router: {},
   /*
