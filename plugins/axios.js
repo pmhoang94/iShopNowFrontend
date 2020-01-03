@@ -2,8 +2,9 @@ import _ from 'lodash'
 export default function({ $axios, app, store ,redirect}) {
   var urlCanLoading =false;
   $axios.onRequest(config => {
-    if (store.state.auth.user.authToken) {
-      config.headers.common['Authorization'] = store.state.auth.user.authToken;
+    debugger
+    if (store.state.auth.user.token) {
+      config.headers.common['Authorization'] = store.state.auth.user.token;
       if(!urlCanLoading) store.state.loadingPage = false;
     }
   })

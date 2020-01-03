@@ -1,3 +1,4 @@
+require('dotenv').config()
 module.exports = {
   mode: 'spa',
   /*
@@ -52,16 +53,21 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
+    '@nuxtjs/dotenv',
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
+    '@nuxtjs/axios'
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    '/api/ishop': 'http://localhost:1337'
+  },
   /*
    ** Build configuration
    */

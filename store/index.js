@@ -1,6 +1,8 @@
 import Vuex from 'vuex'
-import authModule from './modules/auth'
 import moment from 'moment'
+
+import user from './modules/user'
+import auth from './modules/auth'
 
 const createStore = () => {
   return new Vuex.Store({
@@ -9,7 +11,8 @@ const createStore = () => {
       locale: 'vi',
     },
     modules: {
-      auth: authModule
+      auth: auth,
+      user: user
     },
     actions: {
       hideMenu({ commit }) {
